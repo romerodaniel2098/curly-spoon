@@ -1,0 +1,14 @@
+print("ingresa tu nombre=>")
+nombre= input()
+print("ingrsa tu apellido=>")
+apellido= input()
+print("ingresa tu edad=>")
+edad= input()
+
+print("hola soy"+nombre+""+apellido+"y tengo"+edad+"anos")
+
+nombre=input("ingresa tu nombre=>")
+apellido=input("ingrsa tu apellido=>")
+edad=input("edad=>")
+
+print(f"hola soy    {nombre}    {apellido} y tengo  {edad} años")
