@@ -36,7 +36,11 @@ listasuplements = [
 ]
 
 for suplemento in listasuplements:
-    print(f"producto: {suplemento["product"]}, precio:{suplemento["value"]}, cantidad:{suplemento["cantidad"]}")
+    print(f"producto: {suplemento["product"]}")
+
+    print(f"precio:{suplemento["value"]}")
+
+    print(f"cantidad:{suplemento["cantidad"]}")
 
 
  
