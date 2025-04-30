@@ -1,6 +1,20 @@
-nombrecompleto="daniel romero"
+clave_correcta="oro123"
 
+intentos=0
 
-for i in range(10):
-    print(nombrecompleto)
+while True: 
+    clave_usuario = input("introduce la contraseña para abrir la caja fuerte: ")
+
+    intentos+= 1
+    
+    if clave_usuario==clave_correcta:
+        print("¡caja abierta! bien hecho")
+        break
+    else:
+        print("contraseña incorrecta")
+
+if intentos==3:
+    print("Demasiado intentos. Caja bloqueada.")
+    
+
 
