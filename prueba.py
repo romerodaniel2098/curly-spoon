@@ -17,4 +17,4 @@ if intentos==3:
     print("Demasiado intentos. Caja bloqueada.")
     
 
-
+        
