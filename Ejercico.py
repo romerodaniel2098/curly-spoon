@@ -1,23 +1,44 @@
+def solicitar_datos_estudiante():
+    nombre= input("ingresa nombre del estudiante")
+    notas=[]
+    for i in range(1, 4):
+        while True:
+            try:
+                nota = float(input(f"ingrese la nota{i}(0 a 5):"))
+                if 0 <= nota <= 5:
+                    notas.append(nota) 
+                    break
+                else:
+                    print("La nota debe estar entre 0 y 5.")
+            except ValueError:
+                print("Porfavor ingrese un número valido")
+    return nombre, notas
 
+def calcular_promedio(notas):
+    return sum(notas)/len(notas)
 
-def adivina_el_numero():
-    # El número secreto es un número aleatorio entre 1 y 100
-    numero_secreto = (7)
-    intento = None
-    
-    print("¡Bienvenido al juego de Adivina el número!")
-    print("Estoy pensando en un número entre 1 y 100. ¡Intenta adivinarlo!")
+def mostrar_resultado(nombre, promedio):
+    estado= "APROBO" if promedio >= 3.0 else "REPROBO"
+    print(f"\n{nombre} tiene un promedio de {promedio:.2f} y {estado}.\n")
+           
 
-    while intento != numero_secreto:
-        
-        intento = int(input("¿Cuál es tu intento? "))
-        
-        if intento < numero_secreto:
-            print("Demasiado bajo. Intenta de nuevo.")
-        elif intento > numero_secreto:
-            print("Demasiado alto. Intenta de nuevo.")
-        else:
-            print(f"¡Felicidades! Has adivinado el número {numero_secreto}.")
+def main():
+    print("==calculadora de promedios de estudiantes==")
+    while True:
+        try:
+            cantidad=int(input("¿Cuantos estudiantes desea ingresar?"))
+            if cantidad >0:
+               break
+            else: 
+                print("ingrese un número mayor a 0.")
+        except ValueError:
+          print("porfavor ingrese un múmero entero valido.")
 
+    for _ in range(cantidad):
+          nombre, notas = solicitar_datos_estudiante()
+          promedio = calcular_promedio(notas)
+          mostrar_resultado(nombre, promedio)
 
-adivina_el_numero()
+# Ejecutar el programa
+if __name__ == "__main__":
+    main()
