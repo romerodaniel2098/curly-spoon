@@ -14,33 +14,34 @@
 
 listasuplements = [
     {
-         "product": "creatina",
+         "product": "Creatina",
         "value": 100, 
         "cantidad":10
     },
     {
-        "product": "proteina",
+        "product": "Proteina",
         "value": 250,
         "cantidad": 20
     },
     {
-        "product": "aminoacidos",
+        "product": "Aminoacidos",
         "value": 80,
         "cantidad": 15
     },
     {
-        "product": "mancuernas_de_250_kg",
+        "product": "Mancuernas_de_250_kg",
         "value": 50,
         "cantidad": 100 
     },
+    {
+        "product": "Banda elastica",
+        "value": 20,
+        "cantidad":100
+    },
 ]
 
-for suplemento in listasuplements:
-    print(f"producto: {suplemento["product"]}")
-
-    print(f"precio:{suplemento["value"]}")
-
-    print(f"cantidad:{suplemento["cantidad"]}")
+for suplement in listasuplements:
+    print(f"product:{suplement["product" ]} value:{suplement["value" ]}, quantity:{suplement["cantidad" ]} ")
 
 
  

@@ -1,5 +1,5 @@
 def solicitar_datos_estudiante():
-    nombre= input("ingresa nombre del estudiante")
+    nombre= input("ingresa nombre del estudiamte")
     notas=[]
     for i in range(1, 4):
         while True:
