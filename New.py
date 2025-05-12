@@ -1,21 +1,14 @@
-contraseña_correcta="romero123"
-usuario_correcto="romerodaniel2098"
+frase=input("escribe una frase: ")
 
-intentos=+1
+palabras= frase.split()
 
-while True:
-    usuario=input("ingrese el usuario: ")
-    contraseña=input("ingrese la contraseña: ")
+contador= {}
 
-    intentos+=1
-    
-    if usuario == usuario_correcto and contraseña==contraseña_correcta:
+for palabra in palabras:
+    if palabra in contador:
+        contador[palabra] += 1
+    else:
+        contador[palabra] = 1
 
-        print("Inicio de sesion corecto")
-        break 
-    else: print("usuario o contraseña invalidos")
-
-    if intentos==3:
-        print("Demadiados intentos, bloqueo temporal")
-        break   
-
+for palabra, cantidad in contador.items():
+    print(f"{palabra}: {cantidad}")
