@@ -1,3 +1,4 @@
+
 def añadir_producto(inventario, nombre, precio, cantidad):
     if nombre in inventario:
         print(f"El producto{nombre} ya existe. Usa la opción de actualizar. ")

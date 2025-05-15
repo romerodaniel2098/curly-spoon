@@ -1,6 +1,15 @@
 inventario = {}
 
-
+while True:
+    print("\n Bienvenido al Inventario ")
+    print("1. Añadir producto")
+    print("2. Consultar producto")
+    print("3. Actualizar precio")
+    print("4. Eliminar producto")
+    print("5. Calcular valor total del inventario")
+    print("6. Mostrar todos los productos")
+    print("0. Salir")
+    opcion = input("Selecciona una opción: ")
 
     if opcion == "1":
         nombre = input("Nombre del producto: ").strip()
@@ -56,14 +65,3 @@ inventario = {}
 
     else:
         print("Opción inválida. Intenta nuevamente.")
-        
-while True:
-    print("\n--- Menú de Gestión de Inventario ---")
-    print("1. Añadir producto")
-    print("2. Consultar producto")
-    print("3. Actualizar precio")
-    print("4. Eliminar producto")
-    print("5. Calcular valor total del inventario")
-    print("6. Mostrar todos los productos")
-    print("0. Salir")
-    opcion = input("Selecciona una opción: ")
