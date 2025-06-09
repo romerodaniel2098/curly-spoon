@@ -29,6 +29,7 @@ def obtener_clima(ciudad, api_key):
 
 # Solicitar datos al usuario
 ciudad = input("Ingrese la ciudad: ")
+api_key = "4ac2e84cf05f015229d7842b309bf2a0"  
 
 # Llamar a la función
 obtener_clima(ciudad, api_key)

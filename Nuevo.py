@@ -20,3 +20,4 @@ while intentos < max_intentos:
 if intentos == max_intentos:
     print("Has superado el número máximo de intentos. Acceso bloqueado temporalmente.")
 
+                    

@@ -1,55 +1,56 @@
-# Importamos las librerías necesarias
-import urllib.request  # Para hacer la conexión con la página web (API)
-import urllib.parse    # Para codificar correctamente el nombre de la ciudad
-import json            # Para convertir la respuesta en un formato que Python entienda
+# Importamos lo que necesitamos
+import urllib.request  # Para conectarnos a internet y pedir información
+import urllib.parse    # Para escribir bien el nombre de la ciudad en la URL
+import json            # Para entender la respuesta que nos da la página
 
-# Esta función se encarga de buscar el clima de una ciudad
+# Función que busca el clima de una ciudad
 def obtener_clima(ciudad, api_key):
-    # Codificamos el nombre de la ciudad (por ejemplo: Medellín -> Medell%C3%ADn)
+    # Codificamos el nombre de la ciudad (por si tiene acentos o espacios)
     ciudad_codificada = urllib.parse.quote(ciudad)
 
-    # Construimos el enlace (URL) que se usará para pedir los datos del clima
+    # Creamos el enlace con la ciudad y nuestra clave secreta (API Key)
     url = f"http://api.openweathermap.org/data/2.5/weather?q={ciudad_codificada}&appid={api_key}&units=metric&lang=es"
 
-    # Imprimimos el enlace solo para revisar si está bien construido
-    print("\nConsultando clima en:", ciudad)
+    print(f"\nBuscando el clima en: {ciudad}...")
 
     try:
-        # Abrimos la conexión con la URL
+        # Pedimos los datos a la página
         with urllib.request.urlopen(url) as respuesta:
-            # Leemos la respuesta (viene en formato JSON)
+            # Leemos lo que nos respondió la página
             datos = respuesta.read()
 
-            # Convertimos la respuesta JSON en un diccionario de Python
+            # Convertimos esos datos a un formato que Python entiende
             clima = json.loads(datos)
 
-            # Mostramos algunos datos importantes del clima
-            print("\n--- Información del Clima ---")
+            # Mostramos la información importante
+            print("\n--- Clima Actual ---")
             print("Ciudad:", clima['name'])
             print("Temperatura:", clima['main']['temp'], "°C")
-            print("Clima:", clima['weather'][0]['description'])
+            print("Estado del cielo:", clima['weather'][0]['description'])
             print("Humedad:", clima['main']['humidity'], "%")
             print("Viento:", clima['wind']['speed'], "m/s")
+            print(f"País: {clima["sys"]["country"]}")
 
-    # Si la ciudad no se encuentra
-    except urllib.error.HTTPError as e:
-        if e.code == 404:
-            print("No se encontró la ciudad. Intenta escribirla correctamente.")
-        elif e.code == 401:
-            print("API Key no válida o vencida.")
+
+    # Si escribimos mal la ciudad o hay un problema con la API
+    except urllib.error.HTTPError as error:
+        if error.code == 404:
+            print("Ciudad no encontrada. Revisa el nombre.")
+        elif error.code == 401:
+            print("API Key incorrecta o vencida.")
         else:
-            print("Error al hacer la solicitud:", e.code)
+            print("Error al consultar el clima. Código de error:", error.code)
 
-    # Por si ocurre algún otro error inesperado
-    except Exception as e:
-        print("Ocurrió un error inesperado:", e)
+    # Para otros errores inesperados
+    except Exception as error:
+        print("Ocurrió un error:", error)
 
-# --------- Código principal ---------
+# ---------- Código principal ----------
 
 # Pedimos al usuario que escriba una ciudad
-ciudad_usuario = input("Escribe el nombre de la ciudad: ")
+ciudad_usuario = input("¿De qué ciudad quieres saber el clima? ")
 
-# Escribimos nuestra API Key (tú ya la tienes)
+# Escribe aquí tu API Key de OpenWeather (debes tener una)
 mi_api_key = "4ac2e84cf05f015229d7842b309bf2a0"
 
 # Llamamos a la función para mostrar el clima

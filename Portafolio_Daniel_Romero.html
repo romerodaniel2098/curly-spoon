@@ -1,0 +1,82 @@
+<!DOCTYPE HTML> <!-- Declara que el documento está escrito en HTML5 -->
+<html lang="es"> <!-- Establece el idioma principal del contenido a español -->
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8"> <!-- Define la codificación de caracteres (UTF-8 es estándar para compatibilidad) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que el diseño sea adaptable a diferentes dispositivos -->
+    <title>My personal Portafolio</title> <!-- Título que se muestra en la pestaña del navegador -->
+    <meta name="description" content="Personal Portafolio of Daniel Romero as a Riwi developer."> <!-- Descripción para buscadores y SEO -->
+</head>
+
+<body> <!-- Comienzo del cuerpo del documento -->
+
+    <h1>Daniel Romero Garcia - Riwi Developer</h1> <!-- Título principal del sitio -->
+
+    <!-- Navegación principal del sitio con enlaces internos a secciones -->
+    <nav>
+        <a href="#about-me">About me.</a> <!-- Enlace que lleva a la sección "About me" -->
+        <a href="#Projects">Projects.</a> <!-- Enlace a la sección "Projects" -->
+        <a href="#contact">Contact.</a> <!-- Enlace a la sección de contacto -->
+    </nav>
+
+    <!-- Sección Personal -->
+    <section id="about-me"> <!-- Identificador para ser enlazado desde la navegación -->
+        <h2>About me</h2> <!-- Título de la sección -->
+        <p>Hi, my name is Daniel Romero.</p> 
+        <p>I'm a professional in physical activity and sports. I work as a personal trainer and am passionate about fitness. I work as a technical director at a 14-year-old sports club.</p> <!-- Descripción profesional -->
+        <p>I'm also passionate about teaching, working with pedagogy, and teaching primary and secondary school students.</p> <!-- Información adicional sobre su perfil educativo -->
+        <img src="Foto Daniel.jpeg" alt="Foto de Daniel Romero" width="200px"> 
+
+    <!-- Lista de habilidades técnicas -->
+    <h2>My technical skills</h2> <!-- Encabezado para habilidades -->
+    <ul>
+        <li>Premier</li> <!-- Edición de video -->
+        <li>Audition</li> <!-- Edición de audio -->
+        <li>Microsoft applications</li> <!-- Habilidad en el paquete de Microsoft -->
+        <li>Discipline</li> <!-- Habilidad blanda -->
+        <li>Responsibility</li> <!-- Habilidad blanda -->
+    </ul>
+
+    <!-- Sección de proyectos -->
+    <section id="Projects"> <!-- Identificador para la navegación -->
+        <h2>Projects</h2> <!-- Título de sección -->
+        <h3>Project 1: Personal Portafolio</h3> <!-- Subtítulo del proyecto -->
+        <p>This is my first project, creating a personal portfolio in HTML</p> <!-- Descripción del proyecto -->
+        <img src="foto dani porta.jpeg" alt="Mi primer proyecto" width="550px"> <!-- Imagen del proyecto -->
+    </section>
+
+    <!-- Tabla de proyectos -->
+    <table>
+        <tr>
+            <th>Project name</th> 
+            <th>Technologies used</th> 
+            <th>Link</th> 
+        </tr>
+        <tr>
+            <td>Portafolio Website</td> <!-- Nombre del proyecto -->
+            <td>HTML</td> <!-- Tecnología utilizada -->
+            <td><a href="#">view project</a></td> <!-- Enlace (actualmente vacío) -->
+        </tr>
+    </table>
+
+    <!-- Formulario de contacto -->
+    <form id="contact" action="/send" method="post"> <!-- Formulario con método POST y acción simulada -->
+        <label for="name">Name:</label> <!-- Etiqueta para el campo de nombre -->
+        <input type="text" id="name" name="name" required> <!-- Campo de texto obligatorio para nombre -->
+
+        <label for="email">Email:</label> <!-- Etiqueta para el correo -->
+        <input type="email" id="email" name="email" required> <!-- Campo obligatorio para email -->
+
+        <label for="message">Message:</label> <!-- Etiqueta para el mensaje -->
+        <textarea id="message" name="message" rows="4" required></textarea> <!-- Área para escribir el mensaje -->
+
+        <input type="submit" value="Enviar"> <!-- Botón para enviar el formulario -->
+
+        <!-- Enlace al repositorio de GitHub -->
+        <br><br>
+        <a href="https://github.com/romerodaniel2098/curly-spoon.git" target="_blank">GitHub</a>
+    </form>
+
+</body>
+</html>

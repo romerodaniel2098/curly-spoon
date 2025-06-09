@@ -1,0 +1,278 @@
+/* === ESTILOS GENERALES === */
+body {
+  font-family: Arial, sans-serif; /* Fuente base */
+  background-color: #f0f4f8; /* Color de fondo claro */
+  margin: 0; /* Elimina márgenes del navegador */
+  padding: 0; /* Elimina relleno */
+  line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
+}
+
+h1, h2, h3 {
+  color: #1e293b; /* Color oscuro para los títulos */
+  margin-bottom: 10px; /* Espacio debajo de los títulos */
+}
+
+p {
+  color: #334155; /* Color de texto más claro para párrafos */
+}
+
+
+/* === BARRA DE NAVEGACIÓN === */
+nav {
+  background-color: black; /* Fondo negro */
+  padding: 15px; /* Espaciado interno */
+  text-align: center; /* Centra los enlaces */
+}
+
+nav a {
+  color: white; /* Texto blanco */
+  margin: 0 15px; /* Espaciado entre enlaces */
+  text-decoration: none; /* Sin subrayado por defecto */
+  font-weight: bold; /* Enlaces en negrita */
+}
+
+nav a:hover {
+  color: #fbbf24; /* Color amarillo al pasar el cursor */
+  text-decoration: underline; /* Subrayado al pasar el cursor */
+}
+
+
+/* === SECCIONES GENERALES === */
+section {
+  background-color: white; /* Fondo blanco */
+  margin: 20px auto; /* Margen superior e inferior, centrado horizontal */
+  padding: 20px; /* Relleno interno */
+  border-radius: 10px; /* Bordes redondeados */
+  width: 90%; /* Ancho relativo */
+  max-width: 800px; /* Ancho máximo */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+
+/* === IMAGEN PERSONAL === */
+section img {
+  display: block; /* Hace que se comporte como bloque */
+  margin-top: 10px; /* Margen superior */
+  border-radius: 50%; /* Imagen en forma circular */
+  border: 3px solid black; /* Borde negro */
+}
+
+
+/* === LISTA DE HABILIDADES === */
+ul {
+  background-color: #e0f2fe; /* Fondo azul claro */
+  border: 2px solid black; /* Borde negro */
+  padding: 15px; /* Relleno interno */
+  margin: 20px auto; /* Margen vertical, centrado */
+  width: 90%;
+  max-width: 600px; /* Ancho máximo */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+li {
+  margin: 8px 0; /* Espacio entre cada ítem de la lista */
+}
+
+
+/* === TABLA DE INFORMACIÓN === */
+table {
+  border-collapse: collapse; /* Colapsa los bordes */
+  margin: 20px auto; /* Margen vertical, centrado horizontal */
+  width: 90%;
+  max-width: 700px; /* Ancho máximo */
+}
+
+table, th, td {
+  border: 1px solid #64748b; /* Bordes de tabla color gris azulado */
+}
+
+th {
+  background-color: black; /* Fondo negro para encabezados */
+  color: white; /* Texto blanco */
+  padding: 10px; /* Relleno interno */
+}
+
+td {
+  background-color: #f1f5f9; /* Fondo claro para las celdas */
+  padding: 8px; /* Espaciado interno */
+  text-align: center; /* Texto centrado */
+}
+
+
+/* === FORMULARIO DE CONTACTO === */
+form {
+  background-color: #fff; /* Fondo blanco */
+  border: 2px solid black; /* Borde negro */
+  padding: 20px; /* Espaciado interno */
+  margin: 30px auto; /* Margen vertical y centrado */
+  width: 90%;
+  max-width: 500px; /* Ancho máximo */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+label {
+  display: block; /* Cada etiqueta ocupa toda la línea */
+  margin: 10px 5px; /* Espaciado superior e izquierdo */
+  color: black; /* Texto negro */
+}
+
+input, textarea {
+  width: 100%; /* Ancho completo */
+  padding: 10px; /* Relleno interno */
+  margin-bottom: 15px; /* Espacio inferior */
+  border: 1px solid #cbd5e1; /* Borde gris claro */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 14px; /* Tamaño de fuente */
+}
+
+input[type="submit"] {
+  background-color: black; /* Fondo negro */
+  color: white; /* Texto blanco */
+  font-weight: bold; /* Texto en negrita */
+  cursor: pointer; /* Cursor tipo mano */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+input[type="submit"]:hover {
+  background-color: black; /* Sin cambio visual (podrías usar gris oscuro) */
+}
+
+
+/* === ENLACE A GITHUB (dentro del formulario) === */
+form a {
+  display: inline-block; /* Se comporta como botón/enlace visible */
+  margin-top: 10px; /* Margen superior */
+  color: black; /* Color negro */
+  text-decoration: none; /* Sin subrayado */
+}
+
+form a:hover {
+  text-decoration: underline; /* Subrayado al pasar el cursor */
+}
+
+
+/* === ANIMACIÓN DEL ENCABEZADO PRINCIPAL === */
+h1 {
+  animation: slideIn 1.2s ease-in-out; /* Aplica la animación definida abajo */
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0; /* Comienza transparente */
+    transform: translateY(-50px); /* Aparece desde arriba */
+  }
+  to {
+    opacity: 1; /* Termina completamente visible */
+    transform: translateY(0); /* Posición normal */
+  }
+}
+
+/* === MEDIA QUERIES AVANZADAS === */
+
+/* -------------------------
+MÓVIL: menos de 600px
+---------------------------- */
+@media screen and (max-width: 599px) {
+  /* El <nav> tiene menos espacio interior */
+  nav {
+    padding: 10px;
+  }
+
+  /* Los enlaces se muestran en bloque, uno debajo del otro */
+  nav a {
+    display: block;
+    margin: 8px 0;
+    font-size: 16px; /* Tamaño de texto accesible en pantallas pequeñas */
+  }
+
+  /* El título principal se centra y reduce su tamaño */
+  h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  /* Secciones, listas, formularios y tablas ocupan casi todo el ancho */
+  section, ul, form, table {
+    width: 95%;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  /* Tamaño reducido en las tablas para que se lean mejor en pantallas pequeñas */
+  table, th, td {
+    font-size: 12px;
+  }
+
+  /* Inputs y textareas adaptados al tamaño de pantalla */
+  input, textarea {
+    font-size: 14px;
+  }
+}
+
+/* -------------------------
+TABLET: entre 600px y 1023px
+---------------------------- */
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+  /* Espaciado horizontal entre enlaces */
+  nav a {
+    margin: 0 10px;
+    font-size: 17px; /* Texto un poco más grande que en móvil */
+  }
+
+  /* Título más grande */
+  h1 {
+    font-size: 30px;
+  }
+
+  /* Ancho medio para contenido, con más padding */
+  section, ul, form, table {
+    width: 90%;
+    padding: 18px;
+    font-size: 16px;
+  }
+
+  /* Inputs y textareas ligeramente más grandes */
+  input, textarea {
+    font-size: 15px;
+  }
+}
+
+/* -------------------------
+ESCRITORIO: desde 1024px
+---------------------------- */
+@media screen and (min-width: 1024px) {
+  /* Navegación con flexbox, centrado y separación entre enlaces */
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  /* Texto más grande en enlaces */
+  nav a {
+    font-size: 18px;
+  }
+
+  /* Título principal grande */
+  h1 {
+    font-size: 36px;
+  }
+
+  /* Contenedor más estrecho para mejorar legibilidad, padding amplio */
+  section, ul, form, table {
+    width: 75%;
+    padding: 25px;
+    font-size: 18px;
+  }
+
+  /* Tamaño adecuado para formularios */
+  input, textarea {
+    font-size: 16px;
+  }
+
+  /* Tablas más legibles con texto grande */
+  table, th, td {
+    font-size: 16px;
+  }
+}
